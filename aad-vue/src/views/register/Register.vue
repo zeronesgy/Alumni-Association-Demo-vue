@@ -65,6 +65,17 @@ export default {
                 return
             }
             // 请求
+            // const api = 'http://localhost:8080/api/auth/register'
+            this.$http
+                .post('/api/auth/register', { ...this.user })
+                .then(res => {
+                    // 保存token
+                    console.log(res.data)
+                    // 跳转主页
+                })
+                .catch(err => {
+                    console.log('err', err.response.data.msg)
+                })
             console.log('register')
         },
     },

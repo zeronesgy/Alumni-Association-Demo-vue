@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Vuelidate from 'vuelidate'
-import axios from 'axios'
 import VueAxios from 'vue-axios'
+import axios from 'axios'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -19,7 +19,8 @@ Vue.use(IconsPlugin)
 Vue.use(Vuelidate)
 
 // axios
-Vue.use(axios, VueAxios)
+axios.defaults.baseURL = 'http://localhost:1016'
+Vue.use(VueAxios, axios)
 
 new Vue({
     router,
